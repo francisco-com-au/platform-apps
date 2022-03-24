@@ -8,10 +8,10 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - dontgetthemsocks.com.au
+    - american-broomstick.com
     secretName: easy-gift-tls
   rules:
-    - host: dontgetthemsocks.com.au
+    - host: american-broomstick.com
       http:
         paths:
           - path: /
@@ -21,7 +21,7 @@ spec:
                 name: eg-website-static
                 port:
                   number: 80
-    - host: dontgetthemsocks.com.au
+    - host: american-broomstick.com
       http:
         paths:
           - path: /api
