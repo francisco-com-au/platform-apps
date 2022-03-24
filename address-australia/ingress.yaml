@@ -2,7 +2,7 @@
 kind: Ingress
 apiVersion: networking.k8s.io/v1
 metadata:
-  name: address-australia-prod
+  name: address-australia
   namespace: prod
 spec:
   ingressClassName: nginx
@@ -11,7 +11,7 @@ spec:
     - addressaustralia.com.au
     - www.addressaustralia.com.au
     - api.addressaustralia.com.au
-    secretName: addressaustralia-tls
+    secretName: address-australia-tls
   rules:
     - host: addressaustralia.com.au
       http:
