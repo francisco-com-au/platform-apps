@@ -4,6 +4,7 @@ kind: "Endpoints"
 apiVersion: "v1"
 metadata:
   name: "plex"
+  namespace: dev
 subsets:
   - addresses:
       - ip: "10.0.0.10"
