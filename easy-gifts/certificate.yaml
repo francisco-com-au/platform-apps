@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: easy-gifts
+  namespace: dev
+spec:
+  dnsNames:
+    - easy.gifts
+  secretName: easy-gifts-tls
+  issuerRef:
+    name: letsencrypt-cluster-issuer
+    kind: ClusterIssuer

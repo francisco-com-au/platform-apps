@@ -1,0 +1,33 @@
+---
+kind: Ingress
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: easy-gifts
+  namespace: dev
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - easy.gifts
+    secretName: easy-gift-tls
+  rules:
+    - host: easy.gifts
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: eg-website-static
+                port:
+                  number: 80
+    - host: easy.gifts
+      http:
+        paths:
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: eg-website-api
+                port:
+                  number: 8080
