@@ -5,7 +5,7 @@ metadata:
   namespace: dev
 spec:
   dnsNames:
-    - easy.gifts
+    - dontgetthemsocks.com.au
   secretName: easy-gifts-tls
   issuerRef:
     name: letsencrypt-cluster-issuer

@@ -8,10 +8,10 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - easy.gifts
+    - dontgetthemsocks.com.au
     secretName: easy-gift-tls
   rules:
-    - host: easy.gifts
+    - host: dontgetthemsocks.com.au
       http:
         paths:
           - path: /
@@ -21,7 +21,7 @@ spec:
                 name: eg-website-static
                 port:
                   number: 80
-    - host: easy.gifts
+    - host: dontgetthemsocks.com.au
       http:
         paths:
           - path: /api
