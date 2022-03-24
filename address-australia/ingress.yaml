@@ -30,9 +30,31 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: addressaustralia
+                name: address-website-static
                 port:
                   number: 80
+
+    - host: addressaustralia.com.au
+      http:
+        paths:
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: address-website-api
+                port:
+                  number: 8080
+    - host: www.addressaustralia.com.au
+      http:
+        paths:
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: address-website-api
+                port:
+                  number: 8080
+
     - host: api.addressaustralia.com.au
       http:
         paths:
