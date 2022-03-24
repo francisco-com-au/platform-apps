@@ -1,0 +1,45 @@
+---
+kind: Ingress
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: address-australia-prod
+  namespace: prod
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - addressaustralia.com.au
+    - www.addressaustralia.com.au
+    - api.addressaustralia.com.au
+    secretName: addressaustralia-tls
+  rules:
+    - host: addressaustralia.com.au
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: address-website-static
+                port:
+                  number: 80
+    - host: www.addressaustralia.com.au
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: addressaustralia
+                port:
+                  number: 80
+    - host: api.addressaustralia.com.au
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: address-api
+                port:
+                  number: 80
