@@ -1,0 +1,13 @@
+# Based on: https://medium.com/@ManagedKube/kubernetes-access-external-services-e4fd643e5097
+---
+kind: "Endpoints"
+apiVersion: "v1"
+metadata:
+  name: "grafana"
+  namespace: dev
+subsets:
+  - addresses:
+      - ip: "10.0.2.3"
+    ports:
+      - name: "grafana"
+        port: 3000

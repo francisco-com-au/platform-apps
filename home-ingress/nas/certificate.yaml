@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: nas
+  namespace: dev
+spec:
+  dnsNames:
+    - nas.francisco.com.au
+  secretName: nas-tls
+  issuerRef:
+    name: letsencrypt-cluster-issuer
+    kind: ClusterIssuer

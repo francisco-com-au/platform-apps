@@ -1,0 +1,13 @@
+# Based on: https://medium.com/@ManagedKube/kubernetes-access-external-services-e4fd643e5097
+---
+kind: "Endpoints"
+apiVersion: "v1"
+metadata:
+  name: "nas"
+  namespace: dev
+subsets:
+  - addresses:
+      - ip: "10.0.0.10"
+    ports:
+      - name: "nas"
+        port: 5000

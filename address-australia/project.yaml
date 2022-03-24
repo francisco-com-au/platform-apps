@@ -1,0 +1,24 @@
+---
+# Platform Project
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: address-australia
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  description: Address Australia.
+  sourceRepos:
+  - '*'
+  destinations:
+  - namespace: address-australia
+    server: https://kubernetes.default.svc
+  - namespace: '*'
+    server: https://kubernetes.default.svc
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
+  namespaceResourceWhitelist:
+  - group: '*'
+    kind: '*'

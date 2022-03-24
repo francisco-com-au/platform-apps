@@ -1,0 +1,25 @@
+---
+kind: Ingress
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: assistant
+  annotations:
+    # traefik.ingress.kubernetes.io/router.entrypoints: web
+    # traefik.ingress.kubernetes.io/rule-type: PathPrefixStrip
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - assistant.francisco.com.au
+    secretName: assistant-tls
+  rules:
+    - host: assistant.francisco.com.au
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: assistant
+                port:
+                  number: 8123

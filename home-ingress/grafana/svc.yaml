@@ -1,0 +1,11 @@
+---
+kind: "Service"
+apiVersion: "v1"
+metadata:
+  name: "grafana"
+  namespace: dev
+spec:
+  ports:
+    - name: "grafana"
+      protocol: "TCP"
+      port: 3000

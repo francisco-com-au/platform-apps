@@ -1,0 +1,12 @@
+# Based on: https://medium.com/@ManagedKube/kubernetes-access-external-services-e4fd643e5097
+---
+kind: "Endpoints"
+apiVersion: "v1"
+metadata:
+  name: "plex"
+subsets:
+  - addresses:
+      - ip: "10.0.0.10"
+    ports:
+      - name: "plex"
+        port: 32400
