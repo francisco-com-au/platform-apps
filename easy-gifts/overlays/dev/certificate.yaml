@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: easy-gifts
+  namespace: easy-gifts
+spec:
+  dnsNames:
+    - dev.american-broomstick.com
+  secretName: easy-gifts-tls
+  issuerRef:
+    name: letsencrypt-cluster-issuer
+    kind: ClusterIssuer

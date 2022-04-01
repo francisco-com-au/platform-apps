@@ -1,0 +1,33 @@
+---
+kind: Ingress
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: easy-gifts
+  namespace: easy-gifts
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - american-broomstick.com
+    secretName: easy-gift-tls
+  rules:
+    - host: american-broomstick.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: eg-website-static
+                port:
+                  number: 80
+    - host: american-broomstick.com
+      http:
+        paths:
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: eg-website-api
+                port:
+                  number: 8080

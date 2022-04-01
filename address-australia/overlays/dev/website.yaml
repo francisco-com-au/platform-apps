@@ -1,0 +1,9 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: address-australia-website
+  namespace: argocd
+spec:
+  project: address-australia
+  source:
+    targetRevision: develop
