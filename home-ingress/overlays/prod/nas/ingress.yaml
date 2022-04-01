@@ -1,0 +1,26 @@
+---
+kind: Ingress
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: nas
+  namespace: home-ingress
+  annotations:
+    # traefik.ingress.kubernetes.io/router.entrypoints: web
+    # traefik.ingress.kubernetes.io/rule-type: PathPrefixStrip
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - nas.francisco.com.au
+    secretName: nas-tls
+  rules:
+    - host: nas.francisco.com.au
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: nas
+                port:
+                  number: 5000

@@ -1,0 +1,11 @@
+---
+kind: "Service"
+apiVersion: "v1"
+metadata:
+  name: "plex"
+  namespace: home-ingress
+spec:
+  ports:
+    - name: "plex"
+      protocol: "TCP"
+      port: 32400
