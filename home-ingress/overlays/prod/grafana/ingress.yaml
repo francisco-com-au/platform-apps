@@ -1,0 +1,26 @@
+---
+kind: Ingress
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: grafana
+  namespace: home-ingress
+  annotations:
+    # traefik.ingress.kubernetes.io/grafana.entrypoints: web
+    # traefik.ingress.kubernetes.io/rule-type: PathPrefixStrip
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - grafana.francisco.com.au
+    secretName: grafana-tls
+  rules:
+    - host: grafana.francisco.com.au
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: grafana
+                port:
+                  number: 3000

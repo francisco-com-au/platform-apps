@@ -1,0 +1,20 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- ./../../base
+- ./assistant/certificate.yaml
+- ./assistant/endpoint.yaml
+- ./assistant/ingress.yaml
+- ./assistant/svc.yaml
+- ./grafana/certificate.yaml
+- ./grafana/endpoint.yaml
+- ./grafana/ingress.yaml
+- ./grafana/svc.yaml
+- ./nas/certificate.yaml
+- ./nas/endpoint.yaml
+- ./nas/ingress.yaml
+- ./nas/svc.yaml
+- ./plex/certificate.yaml
+- ./plex/endpoint.yaml
+- ./plex/ingress.yaml
+- ./plex/svc.yaml

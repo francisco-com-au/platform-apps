@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: address-australia
+  namespace: address-australia
+spec:
+  dnsNames:
+    - dev.addressaustralia.com.au
+    - dev.api.addressaustralia.com.au
+  secretName: address-australia-tls
+  issuerRef:
+    name: letsencrypt-cluster-issuer
+    kind: ClusterIssuer

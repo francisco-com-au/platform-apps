@@ -1,0 +1,11 @@
+---
+kind: "Service"
+apiVersion: "v1"
+metadata:
+  name: "assistant"
+  namespace: home-ingress
+spec:
+  ports:
+    - name: "assistant"
+      protocol: "TCP"
+      port: 8123

@@ -1,6 +1,0 @@
-apiVersion: platform.io/v1alpha1
-kind: PlatformApplication
-metadata:
-  name: test
-spec:
-  name: test
