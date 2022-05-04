@@ -1,0 +1,22 @@
+---
+# Platform Project
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: up
+  namespace: argocd
+spec:
+  description: Up.
+  sourceRepos:
+  - '*'
+  destinations:
+  - namespace: up
+    server: https://kubernetes.default.svc
+  - namespace: '*'
+    server: https://kubernetes.default.svc
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
+  namespaceResourceWhitelist:
+  - group: '*'
+    kind: '*'

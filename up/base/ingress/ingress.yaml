@@ -1,0 +1,26 @@
+---
+kind: Ingress
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: up
+  namespace: home-ingress
+  annotations:
+    # traefik.ingress.kubernetes.io/router.entrypoints: web
+    # traefik.ingress.kubernetes.io/rule-type: PathPrefixStrip
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - up.francisco.au
+    secretName: up-tls
+  rules:
+    - host: up.francisco.au
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: up
+                port:
+                  number: 5000

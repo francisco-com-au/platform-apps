@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: up
+  namespace: home-ingress
+spec:
+  dnsNames:
+    - up.francisco.au
+  secretName: up-tls
+  issuerRef:
+    name: letsencrypt-cluster-issuer
+    kind: ClusterIssuer
