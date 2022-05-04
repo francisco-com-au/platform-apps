@@ -7,7 +7,7 @@ metadata:
   namespace: home-ingress
 subsets:
   - addresses:
-      - ip: "10.0.0.10"
+      - ip: "10.0.1.10"
     ports:
       - name: "up"
         port: 3001
