@@ -1,0 +1,11 @@
+---
+kind: "Service"
+apiVersion: "v1"
+metadata:
+  name: "up"
+  namespace: home-ingress
+spec:
+  ports:
+    - name: "up"
+      protocol: "TCP"
+      port: 5000

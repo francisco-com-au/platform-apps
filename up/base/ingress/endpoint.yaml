@@ -1,0 +1,13 @@
+# Based on: https://medium.com/@ManagedKube/kubernetes-access-external-services-e4fd643e5097
+---
+kind: "Endpoints"
+apiVersion: "v1"
+metadata:
+  name: "up"
+  namespace: home-ingress
+subsets:
+  - addresses:
+      - ip: "10.0.0.10"
+    ports:
+      - name: "up"
+        port: 5000
