@@ -1,4 +1,4 @@
-# platform-apps 📲
+# Platform Apps 📲
 
 # What is this?
 This is a mostly automated repo. Contains manifests to be installed by ArgoCD on clusters. This goes hand in hand with the [**Core Pipeline**](https://github.com/francisco-com-au/core-pipeline) and the the [**Platform Cluster**](https://github.com/francisco-com-au/platform-cluster) repos.
