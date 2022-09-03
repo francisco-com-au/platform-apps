@@ -7,10 +7,10 @@ metadata:
 spec:
   generators:
     - git:
-      repoURL: https://github.com/francisco-com-au/platform-apps.git
-      revision: main
-      directories:
-        - path: 'managed/lab/components/*'
+        repoURL: https://github.com/francisco-com-au/platform-apps.git
+        revision: main
+        directories:
+          - path: 'managed/lab/components/*'
   template:
     spec:
       source:
