@@ -4,3 +4,6 @@ kind: Kustomization
 resources:
   - project.yaml
   - components.yaml
+
+
+
