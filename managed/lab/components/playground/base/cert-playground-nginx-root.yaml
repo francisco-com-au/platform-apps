@@ -6,7 +6,7 @@ metadata:
   namespace: lab
 spec:
   dnsNames:
-    - playground.lab.undefined
+    - playground.american-broomstick.com
   secretName: playground-nginx-root-tls
   issuerRef:
     name: letsencrypt-cluster-issuer
