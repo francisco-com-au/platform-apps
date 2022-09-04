@@ -3,7 +3,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: lab-components
-  namespace: argocd
+  namespace: lab
   # finalizers:
   #   - resources-finalizer.argocd.argoproj.io
 spec:
