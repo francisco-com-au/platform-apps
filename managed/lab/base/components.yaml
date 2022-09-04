@@ -3,7 +3,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: lab-components
-  namespace: lab
+  namespace: argocd
   # finalizers:
   #   - resources-finalizer.argocd.argoproj.io
 spec:
@@ -24,7 +24,7 @@ spec:
         path: '{{path}}/overlays/prod'
       destination:
         server: https://kubernetes.default.svc
-        namespace: argocd
+        namespace: lab
       syncPolicy:
         automated:
           selfHeal: true
