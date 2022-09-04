@@ -1,8 +1,9 @@
 ---
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-
-
+resources:
+  - svc-playground-nginx-root.yaml
+  - cert-playground-nginx-root.yaml
 
 
 
