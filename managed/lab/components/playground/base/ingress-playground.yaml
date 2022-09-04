@@ -21,9 +21,9 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: playground-nginx-root
+            name: playground-nginx-server
             port:
-              number: 8080
+              number: 80
       
     #   - path: /
     #     pathType: Prefix

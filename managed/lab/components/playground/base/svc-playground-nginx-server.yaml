@@ -2,7 +2,7 @@
 kind: "Service"
 apiVersion: "v1"
 metadata:
-  name: "playground-nginx-root"
+  name: "playground-nginx-server"
   namespace: lab
 spec:
   selector:
@@ -10,6 +10,6 @@ spec:
     component: playground
     container: nginx
   ports:
-    - name: "root"
+    - name: "server"
       protocol: "TCP"
-      port: 8080
+      port: 80
