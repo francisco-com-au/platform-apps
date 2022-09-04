@@ -1,0 +1,34 @@
+---
+# argo external
+kind: Ingress
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: playground
+  namespace: lab
+  annotations:
+    nginx.ingress.kubernetes.io/backend-protocol: https # ingress-nginx
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - playground.american-broomstick.com
+    secretName: playground-tls
+  rules:
+  - host: playground.american-broomstick.com
+    http:
+      paths: 
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: playground-nginx-root
+            port:
+              number: 8080
+      
+    #   - path: /
+    #     pathType: Prefix
+    #     backend:
+    #       service:
+    #         name: argo-server
+    #         port:
+    #           number: 2746
