@@ -6,7 +6,7 @@ metadata:
   namespace: lab
 spec:
   dnsNames:
-    - playground.lab.test.francisco.com.au
+    - playground.lab.undefined
   secretName: playground-nginx-root-tls
   issuerRef:
     name: letsencrypt-cluster-issuer
