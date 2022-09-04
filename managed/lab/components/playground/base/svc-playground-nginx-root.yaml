@@ -3,9 +3,9 @@ kind: "Service"
 apiVersion: "v1"
 metadata:
   name: "playground-nginx-root"
-  namespace: 8080
+  namespace: lab
 spec:
   ports:
     - name: "root"
       protocol: "TCP"
-      port: lab
+      port: 8080
