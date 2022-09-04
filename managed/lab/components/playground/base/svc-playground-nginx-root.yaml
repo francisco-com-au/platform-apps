@@ -5,6 +5,10 @@ metadata:
   name: "playground-nginx-root"
   namespace: lab
 spec:
+  selector:
+    app: lab
+    component: playground
+    container: nginx
   ports:
     - name: "root"
       protocol: "TCP"
