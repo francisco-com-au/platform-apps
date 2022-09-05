@@ -2,20 +2,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: playground-simple-web
+  name: echo-simple-web
   namespace: lab
 spec:
   selector:
     matchLabels:
       app: lab
-      component: playground
+      component: echo
       container: simple-web
   replicas: 2
   template:
     metadata:
       labels:
         app: lab
-        component: playground
+        component: echo
         container: simple-web
     spec:
       containers:

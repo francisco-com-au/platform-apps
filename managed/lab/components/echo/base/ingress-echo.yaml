@@ -3,7 +3,7 @@
 kind: Ingress
 apiVersion: networking.k8s.io/v1
 metadata:
-  name: playground
+  name: echo
   namespace: lab
   # annotations:
   #  nginx.ingress.kubernetes.io/backend-protocol: https # ingress-nginx
@@ -11,17 +11,17 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - playground.american-broomstick.com
-    secretName: playground-tls
+    - echo.american-broomstick.com
+    secretName: echo-tls
   rules:
-  - host: playground.american-broomstick.com
+  - host: echo.american-broomstick.com
     http:
       paths: 
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: playground-nginx-server
+            name: echo-simple-web-server
             port:
               number: 80
     #   - path: /

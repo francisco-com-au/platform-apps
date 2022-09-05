@@ -2,12 +2,12 @@
 kind: "Service"
 apiVersion: "v1"
 metadata:
-  name: "playground-simple-web-server"
+  name: "echo-simple-web-server"
   namespace: lab
 spec:
   selector:
     app: lab
-    component: playground
+    component: echo
     container: simple-web
   ports:
     - name: "server"
