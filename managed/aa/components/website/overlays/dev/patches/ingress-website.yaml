@@ -1,0 +1,22 @@
+---
+kind: Ingress
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: website
+  namespace: aa
+spec:
+  tls:
+  - hosts:
+    - website.dev.addressaustralia.com.au
+    secretName: website-tls
+  rules:
+  - host: website.dev.addressaustralia.com.au
+    http:
+      paths: 
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: website-mongo-mongo
+              port:
+                number: 27017

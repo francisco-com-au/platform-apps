@@ -10,7 +10,7 @@ spec:
       app: lab
       component: playground
       container: nginx
-  replicas: 2
+  replicas: 1
   template:
     metadata:
       labels:
@@ -23,3 +23,11 @@ spec:
           image: nginx:latest
           ports: 
             - containerPort: 80
+          
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "256Mi"
+            limits:
+              cpu: "250m"
+              memory: "256Mi"

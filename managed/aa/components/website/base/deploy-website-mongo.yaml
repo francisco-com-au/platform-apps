@@ -2,28 +2,30 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: echo-simple-web
-  namespace: lab
+  name: website-mongo
+  namespace: aa
 spec:
   selector:
     matchLabels:
-      app: lab
-      component: echo
-      container: simple-web
+      app: aa
+      component: website
+      container: mongo
   replicas: 1
   template:
     metadata:
       labels:
-        app: lab
-        component: echo
-        container: simple-web
+        app: aa
+        component: website
+        container: mongo
     spec:
       containers:
-        - name: simple-web
-          image: yeasy/simple-web:latest
+        - name: mongo
+          image: mongo:3.6.23
           ports: 
-            - containerPort: 80
-          
+            - containerPort: 27017
+          env: 
+            - name: ENV_TEST_KEY
+              value: "ENV_TEST_VALUE"
           resources:
             requests:
               cpu: "100m"

@@ -1,0 +1,25 @@
+---
+kind: Ingress
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: website
+  namespace: aa
+  # annotations:
+  #  nginx.ingress.kubernetes.io/backend-protocol: https # ingress-nginx
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+      - website.addressaustralia.com.au
+      secretName: website-tls
+  rules:
+    - host: website.addressaustralia.com.au
+      http:
+        paths: 
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: website-mongo-mongo
+                port:
+                  number: 27017
