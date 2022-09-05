@@ -6,4 +6,4 @@ metadata:
   namespace: aa
 spec:
   dnsNames:
-    - website.dev.addressaustralia.com.au
+    - dev.addressaustralia.com.au

@@ -10,16 +10,23 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-      - website.addressaustralia.com.au
+      - addressaustralia.com.au
       secretName: website-tls
   rules:
-    - host: website.addressaustralia.com.au
+    - host: addressaustralia.com.au
       http:
         paths: 
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: website-mongo-mongo
+                name: website-static-webserver
                 port:
-                  number: 27017
+                  number: 80
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: website-api-api
+                port:
+                  number: 8080

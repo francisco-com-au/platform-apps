@@ -4,6 +4,10 @@ kind: Kustomization
 resources:
   - deploy-website-mongo.yaml
   - svc-website-mongo-mongo.yaml
+  - deploy-website-static.yaml
+  - svc-website-static-webserver.yaml
+  - deploy-website-api.yaml
+  - svc-website-api-api.yaml
   - cert-website.yaml
   - ingress-website.yaml
 
