@@ -9,9 +9,9 @@ metadata:
 spec:
   ingressClassName: nginx
   tls:
-  - hosts:
-    - playground.american-broomstick.com
-    secretName: playground-tls
+    - hosts:
+      - playground.american-broomstick.com
+      secretName: playground-tls
   rules:
     - host: playground.american-broomstick.com
       http:

@@ -9,9 +9,9 @@ metadata:
 spec:
   ingressClassName: nginx
   tls:
-  - hosts:
-    - echo.american-broomstick.com
-    secretName: echo-tls
+    - hosts:
+      - echo.american-broomstick.com
+      secretName: echo-tls
   rules:
     - host: echo.american-broomstick.com
       http:

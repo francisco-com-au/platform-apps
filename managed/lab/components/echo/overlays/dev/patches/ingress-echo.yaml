@@ -6,16 +6,17 @@ metadata:
   namespace: lab
 spec:
   tls:
-    - hosts:
-        - echo.dev.american-broomstick.com
+  - hosts:
+    - echo.dev.american-broomstick.com
+    secretName: echo-tls
   rules:
   - host: echo.dev.american-broomstick.com
-  http:
-    paths: 
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: echo-simple-web-server
-            port:
-              number: 80
+    http:
+      paths: 
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: echo-simple-web-server
+              port:
+                number: 80
