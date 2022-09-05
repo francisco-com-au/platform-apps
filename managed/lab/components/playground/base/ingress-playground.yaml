@@ -1,5 +1,4 @@
 ---
-# argo external
 kind: Ingress
 apiVersion: networking.k8s.io/v1
 metadata:
@@ -14,20 +13,13 @@ spec:
     - playground.american-broomstick.com
     secretName: playground-tls
   rules:
-  - host: playground.american-broomstick.com
-    http:
-      paths: 
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: playground-nginx-server
-            port:
-              number: 80
-    #   - path: /
-    #     pathType: Prefix
-    #     backend:
-    #       service:
-    #         name: argo-server
-    #         port:
-    #           number: 2746
+    - host: playground.american-broomstick.com
+      http:
+        paths: 
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: playground-nginx-server
+                port:
+                  number: 80

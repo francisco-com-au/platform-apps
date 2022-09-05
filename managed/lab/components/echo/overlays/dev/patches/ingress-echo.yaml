@@ -1,0 +1,21 @@
+---
+kind: Ingress
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: echo
+  namespace: lab
+spec:
+  tls:
+    - hosts:
+        - echo.dev.american-broomstick.com
+  rules:
+  - host: echo.dev.american-broomstick.com
+  http:
+    paths: 
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: echo-simple-web-server
+            port:
+              number: 80
