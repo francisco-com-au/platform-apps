@@ -4,6 +4,8 @@ kind: Kustomization
 resources:
   - deploy-playground-nginx.yaml
   - svc-playground-nginx-server.yaml
+  - deploy-playground-simple-web.yaml
+  - svc-playground-simple-web-server.yaml
   - cert-playground.yaml
   - ingress-playground.yaml
 
