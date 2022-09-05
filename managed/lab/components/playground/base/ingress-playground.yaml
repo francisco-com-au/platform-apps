@@ -24,7 +24,6 @@ spec:
             name: playground-nginx-server
             port:
               number: 80
-      
     #   - path: /
     #     pathType: Prefix
     #     backend:
