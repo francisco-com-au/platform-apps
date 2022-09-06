@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: api
-          image: gcr.io/placeholder/aa/website/main/api:latest
+          image: aa/website-api
           ports: 
             - containerPort: 8080
           
