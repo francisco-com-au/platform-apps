@@ -1,0 +1,35 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: website-mongo
+  namespace: aa
+spec:
+  selector:
+    matchLabels:
+      app: aa
+      component: website
+      container: mongo
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: aa
+        component: website
+        container: mongo
+    spec:
+      containers:
+        - name: mongo
+          image: mongo:3.6.23
+          ports: 
+            - containerPort: 27017
+          env: 
+            - name: ENV_TEST_KEY
+              value: "ENV_TEST_VALUE"
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "256Mi"
+            limits:
+              cpu: "250m"
+              memory: "256Mi"
