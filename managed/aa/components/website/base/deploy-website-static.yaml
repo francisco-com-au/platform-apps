@@ -21,6 +21,7 @@ spec:
       containers:
         - name: static
           image: aa/website-static:f9a4f15
+          imagePullPolicy: Always
           ports: 
             - containerPort: 80
           

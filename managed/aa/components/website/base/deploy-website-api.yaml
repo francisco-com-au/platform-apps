@@ -21,6 +21,7 @@ spec:
       containers:
         - name: api
           image: aa/website-api:f9a4f15
+          imagePullPolicy: Always
           ports: 
             - containerPort: 8080
           
