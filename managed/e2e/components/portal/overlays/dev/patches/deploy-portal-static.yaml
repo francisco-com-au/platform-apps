@@ -9,4 +9,4 @@ spec:
     spec:
       containers:
         - name: static
-          image: gcr.io/gcp-test-fran-root/e2e/portal/dev/static:latest
+          image: gcr.io/tf-ops-cicd-97aadd/e2e/portal/dev/static:latest

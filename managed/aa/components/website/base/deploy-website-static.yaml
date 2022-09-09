@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: static
-          image: gcr.io/gcp-test-fran-root/aa/website/main/static:latest
+          image: gcr.io/tf-ops-cicd-97aadd/aa/website/main/static:latest
           imagePullPolicy: Always
           ports: 
             - containerPort: 80
