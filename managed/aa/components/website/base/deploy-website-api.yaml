@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: api
-          image: gcr.io/placeholder/aa/website/main/api:latest
+          image: gcr.io/gcp-test-fran-root/aa/website/main/api:latest
           imagePullPolicy: Always
           ports: 
             - containerPort: 8080
