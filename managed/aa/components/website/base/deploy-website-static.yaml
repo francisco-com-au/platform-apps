@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: static
-          image: aa/website-static:f9a4f15
+          image: gcr.io/placeholder/aa/website/main/static:latest
           imagePullPolicy: Always
           ports: 
             - containerPort: 80
