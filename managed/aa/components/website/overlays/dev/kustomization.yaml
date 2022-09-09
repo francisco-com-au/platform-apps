@@ -3,10 +3,10 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - ../../base
-  - patches/deploy-website-mongo.yaml
-  - patches/deploy-website-static.yaml
-  - patches/deploy-website-api.yaml
 patchesStrategicMerge:
   - patches/cert-website.yaml
   - patches/ingress-website.yaml
+  - patches/deploy-website-mongo.yaml
+  - patches/deploy-website-static.yaml
+  - patches/deploy-website-api.yaml
 
