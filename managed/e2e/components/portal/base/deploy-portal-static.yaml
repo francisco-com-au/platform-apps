@@ -1,0 +1,34 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: portal-static
+  namespace: e2e
+spec:
+  selector:
+    matchLabels:
+      app: e2e
+      component: portal
+      container: static
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: e2e
+        component: portal
+        container: static
+    spec:
+      containers:
+        - name: static
+          image: gcr.io/placeholder/e2e/portal/main/static:latest
+          imagePullPolicy: Always
+          ports: 
+            - containerPort: 80
+          
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "256Mi"
+            limits:
+              cpu: "250m"
+              memory: "256Mi"
