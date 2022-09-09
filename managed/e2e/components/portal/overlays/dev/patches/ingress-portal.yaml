@@ -7,10 +7,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - develop.american-broomstick.com
+    - dev.american-broomstick.com
     secretName: portal-tls
   rules:
-  - host: develop.american-broomstick.com
+  - host: dev.american-broomstick.com
     http:
       paths: 
         - path: /

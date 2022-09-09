@@ -6,4 +6,4 @@ metadata:
   namespace: e2e
 spec:
   dnsNames:
-    - develop.american-broomstick.com
+    - dev.american-broomstick.com
