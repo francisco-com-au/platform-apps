@@ -7,4 +7,4 @@ metadata:
 data:
   APP_ID: e2e
   APP_NAME: End to end
-  DOMAIN: american-broomstick.com
+  APP_DOMAIN: american-broomstick.com
