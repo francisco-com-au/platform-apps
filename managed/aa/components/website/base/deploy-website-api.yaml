@@ -24,7 +24,68 @@ spec:
           imagePullPolicy: Always
           ports: 
             - containerPort: 8080
-          
+          env: 
+            - name: PORT
+              value: "8080"
+            - name: GOOGLE_APPLICATION_CREDENTIALS
+              value: "/var/secrets/google/key.json"
+            - name: MONGO_PORT
+              value: "27017"
+            - name: MONGO_COLLECTION
+              valueFrom:
+                secretKeyRef:
+                  name: website-sessions-mongo
+                  key: db
+            - name: MONGO_USER_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: website-sessions-mongo
+                  key: username
+            - name: MONGO_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: website-sessions-mongo
+                  key: password
+            - name: COOKIE_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: website-sessions-mongo
+                  key: cookie_name
+            - name: COOKIE_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: website-sessions-mongo
+                  key: cookie_secret
+            - name: SENDGRID_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: sendgrid-key
+                  key: key
+            - name: STRIPE_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: stripe-key
+                  key: secret_key
+            - name: STRIPE_PUBLISHABLE_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: stripe-key
+                  key: publishable_key
+            - name: STRIPE_WEBHOOK_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: stripe-key
+                  key: webhook_secret
+            - name: MAIL_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: mail-key
+                  key: MAIL_USERNAME
+            - name: MAIL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mail-key
+                  key: MAIL_PASSWORD
           resources:
             requests:
               cpu: "100m"
