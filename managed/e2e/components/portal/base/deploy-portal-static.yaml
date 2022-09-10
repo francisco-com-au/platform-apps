@@ -23,7 +23,7 @@ spec:
           image: gcr.io/tf-ops-cicd-97aadd/e2e/portal/main/static:latest
           imagePullPolicy: Always
           ports: 
-            - containerPort: 80
+            - containerPort: 8080
           
           resources:
             requests:
