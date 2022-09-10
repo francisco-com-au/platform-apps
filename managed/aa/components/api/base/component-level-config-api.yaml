@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: component-level-config
+  name: component-level-config-api
   namespace: aa
 data:
   COMPONENT_ID: api

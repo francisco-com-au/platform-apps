@@ -38,6 +38,6 @@ spec:
             - configMapRef:
                 name: env-level-config
             - configMapRef:
-                name: component-level-config
+                name: component-level-config-website
             - configMapRef:
-                name: container-level-config-static
+                name: container-level-config-website-static
