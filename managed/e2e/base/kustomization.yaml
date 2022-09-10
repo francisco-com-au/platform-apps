@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
   - project.yaml
   - components.yaml
+  - app-level-config.yaml
 
 
 

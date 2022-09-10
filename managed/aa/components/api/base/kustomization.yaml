@@ -2,6 +2,8 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
+  - component-level-config.yaml
+  - container-level-config-api.yaml
   - deploy-api-api.yaml
   - svc-api-api-api.yaml
   - cert-api.yaml

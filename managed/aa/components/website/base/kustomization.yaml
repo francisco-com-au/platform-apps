@@ -2,10 +2,14 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
+  - component-level-config.yaml
+  - container-level-config-mongo.yaml
   - deploy-website-mongo.yaml
   - svc-website-mongo-mongo.yaml
+  - container-level-config-static.yaml
   - deploy-website-static.yaml
   - svc-website-static-webserver.yaml
+  - container-level-config-api.yaml
   - deploy-website-api.yaml
   - svc-website-api-api.yaml
   - cert-website.yaml
