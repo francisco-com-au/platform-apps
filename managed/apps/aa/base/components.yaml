@@ -12,7 +12,7 @@ spec:
         repoURL: https://github.com/francisco-com-au/platform-apps.git
         revision: main
         directories:
-          - path: 'managed/aa/components/*'
+          - path: 'managed/apps/aa/components/*'
   template:
     metadata:
       name: 'aa-{{path.basename}}'

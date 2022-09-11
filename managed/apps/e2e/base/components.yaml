@@ -12,7 +12,7 @@ spec:
         repoURL: https://github.com/francisco-com-au/platform-apps.git
         revision: main
         directories:
-          - path: 'managed/e2e/components/*'
+          - path: 'managed/apps/e2e/components/*'
   template:
     metadata:
       name: 'e2e-{{path.basename}}'
