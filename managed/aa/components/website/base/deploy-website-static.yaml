@@ -4,6 +4,8 @@ kind: Deployment
 metadata:
   name: website-static
   namespace: aa
+  annotations:
+    reloader.stakater.com/auto: "true"
 spec:
   selector:
     matchLabels:
