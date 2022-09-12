@@ -49,3 +49,4 @@ spec:
                 name: component-level-config-api
             - configMapRef:
                 name: container-level-config-api-api
+          undefined

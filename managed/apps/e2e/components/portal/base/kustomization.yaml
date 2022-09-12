@@ -6,6 +6,7 @@ resources:
   - container-level-config-portal-static.yaml
   - deploy-portal-static.yaml
   - svc-portal-static-webserver.yaml
+  - secret-test.yaml
   - cert-portal.yaml
   - ingress-portal.yaml
 

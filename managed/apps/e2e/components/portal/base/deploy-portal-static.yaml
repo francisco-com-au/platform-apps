@@ -43,3 +43,7 @@ spec:
                 name: component-level-config-portal
             - configMapRef:
                 name: container-level-config-portal-static
+          volumeMounts:
+            - mountPath: "/etc/secrets/test"
+              name: test
+              readOnly: true
