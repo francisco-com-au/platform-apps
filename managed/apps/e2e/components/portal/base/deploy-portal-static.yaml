@@ -47,3 +47,7 @@ spec:
             - mountPath: "/etc/secrets/test"
               name: test
               readOnly: true
+      volumes:
+        - name: test
+          secret:
+            secretName: test
