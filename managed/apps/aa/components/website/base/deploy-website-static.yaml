@@ -45,3 +45,5 @@ spec:
                 name: container-level-config-website-static
           
       
+      imagePullSecrets:
+        - name: image-pull-secret

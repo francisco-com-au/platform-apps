@@ -106,3 +106,5 @@ spec:
                 name: container-level-config-website-api
           
       
+      imagePullSecrets:
+        - name: image-pull-secret

@@ -51,3 +51,5 @@ spec:
         - name: pull-key
           secret:
             secretName: pull-key
+      imagePullSecrets:
+        - name: image-pull-secret

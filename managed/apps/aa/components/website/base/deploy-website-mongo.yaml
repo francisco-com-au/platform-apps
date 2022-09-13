@@ -47,3 +47,5 @@ spec:
                 name: container-level-config-website-mongo
           
       
+      imagePullSecrets:
+        - name: image-pull-secret
