@@ -44,12 +44,12 @@ spec:
             - configMapRef:
                 name: container-level-config-portal-static
           volumeMounts:
-            - mountPath: "/etc/secrets/pull-key"
-              name: pull-key
+            - mountPath: "/etc/secrets/demo"
+              name: demo
               readOnly: true
       volumes:
-        - name: pull-key
+        - name: demo
           secret:
-            secretName: pull-key
+            secretName: demo
       imagePullSecrets:
         - name: image-pull-secret
