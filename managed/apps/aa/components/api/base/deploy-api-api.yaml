@@ -1,0 +1,53 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-api
+  namespace: aa
+  annotations:
+    reloader.stakater.com/auto: "true"
+spec:
+  selector:
+    matchLabels:
+      app: aa
+      component: api
+      container: api
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: aa
+        component: api
+        container: api
+    spec:
+      containers:
+        - name: api
+          image: gcr.io/tf-ops-cicd-97aadd/aa/api/main/api:latest
+          imagePullPolicy: Always
+          ports: 
+            - containerPort: 8080
+          env: 
+            - name: PORT
+              value: "8080"
+            - name: SOLR_PORT
+              value: "8985"
+            - name: SOLR_PROTOCOL
+              value: "http"
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "256Mi"
+            limits:
+              cpu: "250m"
+              memory: "256Mi"
+          envFrom:
+            - configMapRef:
+                name: app-level-config
+            - configMapRef:
+                name: env-level-config
+            - configMapRef:
+                name: component-level-config-api
+            - configMapRef:
+                name: container-level-config-api-api
+          
+      
