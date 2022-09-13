@@ -30,7 +30,7 @@ spec:
             - name: PORT
               value: "8080"
             - name: GOOGLE_APPLICATION_CREDENTIALS
-              value: "/var/secrets/google/key.json"
+              value: "/etc/secrets/google/key.json"
             - name: MONGO_PORT
               value: "27017"
             - name: MONGO_COLLECTION
@@ -104,7 +104,37 @@ spec:
                 name: component-level-config-website
             - configMapRef:
                 name: container-level-config-website-api
-          
-      
+          volumeMounts:
+            - mountPath: "/etc/secrets/google"
+              name: google
+              readOnly: true
+            - mountPath: "/etc/secrets/website-sessions-mongo"
+              name: website-sessions-mongo
+              readOnly: true
+            - mountPath: "/etc/secrets/sendgrid-key"
+              name: sendgrid-key
+              readOnly: true
+            - mountPath: "/etc/secrets/stripe-key"
+              name: stripe-key
+              readOnly: true
+            - mountPath: "/etc/secrets/main-key"
+              name: main-key
+              readOnly: true
+      volumes:
+        - name: google
+          secret:
+            secretName: google
+        - name: website-sessions-mongo
+          secret:
+            secretName: website-sessions-mongo
+        - name: sendgrid-key
+          secret:
+            secretName: sendgrid-key
+        - name: stripe-key
+          secret:
+            secretName: stripe-key
+        - name: main-key
+          secret:
+            secretName: main-key
       imagePullSecrets:
         - name: image-pull-secret

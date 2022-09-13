@@ -12,6 +12,11 @@ resources:
   - container-level-config-website-api.yaml
   - deploy-website-api.yaml
   - svc-website-api-api.yaml
+  - secret-google.yaml
+  - secret-website-sessions-mongo.yaml
+  - secret-sendgrid-key.yaml
+  - secret-stripe-key.yaml
+  - secret-main-key.yaml
   - cert-website.yaml
   - ingress-website.yaml
 
