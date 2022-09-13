@@ -8,11 +8,11 @@ spec:
   generators:
     - git:
         repoURL: https://github.com/francisco-com-au/platform-apps.git
-        revision: main
+        revision: develop
         directories:
           - path: 'managed/apps/aa/components/*'
   template:
     spec:
       source:
-        targetRevision: main
+        targetRevision: develop
         path: '{{path}}/overlays/dev'
