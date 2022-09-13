@@ -27,8 +27,31 @@ spec:
           ports: 
             - containerPort: 27017
           env: 
-            - name: ENV_TEST_KEY
-              value: "ENV_TEST_VALUE"
+            - name: MONGO_INITDB_ROOT_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: website-sessions-mongo
+                  key: username
+            - name: MONGO_INITDB_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: website-sessions-mongo
+                  key: password
+            - name: MONGODB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: website-sessions-mongo
+                  key: username
+            - name: MONGODB_PASS
+              valueFrom:
+                secretKeyRef:
+                  name: website-sessions-mongo
+                  key: password
+            - name: MONGO_INITDB_DATABASE
+              valueFrom:
+                secretKeyRef:
+                  name: website-sessions-mongo
+                  key: db
           resources:
             requests:
               cpu: "100m"
@@ -45,7 +68,13 @@ spec:
                 name: component-level-config-website
             - configMapRef:
                 name: container-level-config-website-mongo
-          
-      
+          volumeMounts:
+            - mountPath: "/etc/secrets/website-sessions-mongo"
+              name: website-sessions-mongo
+              readOnly: true
+      volumes:
+        - name: website-sessions-mongo
+          secret:
+            secretName: website-sessions-mongo
       imagePullSecrets:
         - name: image-pull-secret

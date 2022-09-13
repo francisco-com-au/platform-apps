@@ -6,6 +6,7 @@ resources:
   - container-level-config-website-mongo.yaml
   - deploy-website-mongo.yaml
   - svc-website-mongo-mongo.yaml
+  - secret-website-sessions-mongo.yaml
   - container-level-config-website-static.yaml
   - deploy-website-static.yaml
   - svc-website-static-webserver.yaml
