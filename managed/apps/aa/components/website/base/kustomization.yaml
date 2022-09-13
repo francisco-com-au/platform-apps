@@ -16,7 +16,7 @@ resources:
   - secret-website-sessions-mongo.yaml
   - secret-sendgrid-key.yaml
   - secret-stripe-key.yaml
-  - secret-main-key.yaml
+  - secret-mail-key.yaml
   - cert-website.yaml
   - ingress-website.yaml
 

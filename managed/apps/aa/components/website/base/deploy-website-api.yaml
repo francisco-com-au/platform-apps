@@ -117,8 +117,8 @@ spec:
             - mountPath: "/etc/secrets/stripe-key"
               name: stripe-key
               readOnly: true
-            - mountPath: "/etc/secrets/main-key"
-              name: main-key
+            - mountPath: "/etc/secrets/mail-key"
+              name: mail-key
               readOnly: true
       volumes:
         - name: google
@@ -133,8 +133,8 @@ spec:
         - name: stripe-key
           secret:
             secretName: stripe-key
-        - name: main-key
+        - name: mail-key
           secret:
-            secretName: main-key
+            secretName: mail-key
       imagePullSecrets:
         - name: image-pull-secret
