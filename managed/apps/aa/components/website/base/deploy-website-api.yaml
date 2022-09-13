@@ -110,9 +110,6 @@ spec:
             - mountPath: "/etc/secrets/google"
               name: google
               readOnly: true
-            - mountPath: "/etc/secrets/website-sessions-mongo"
-              name: website-sessions-mongo
-              readOnly: true
             - mountPath: "/etc/secrets/sendgrid-key"
               name: sendgrid-key
               readOnly: true
@@ -126,9 +123,6 @@ spec:
         - name: google
           secret:
             secretName: google
-        - name: website-sessions-mongo
-          secret:
-            secretName: website-sessions-mongo
         - name: sendgrid-key
           secret:
             secretName: sendgrid-key
