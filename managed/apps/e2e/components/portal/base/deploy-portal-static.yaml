@@ -50,6 +50,6 @@ spec:
       volumes:
         - name: demo
           secret:
-            secretName: demo
+            secretName: portal-static-demo
       imagePullSecrets:
         - name: image-pull-secret

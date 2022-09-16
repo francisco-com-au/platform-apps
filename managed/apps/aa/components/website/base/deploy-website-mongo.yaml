@@ -30,27 +30,27 @@ spec:
             - name: MONGO_INITDB_ROOT_USERNAME
               valueFrom:
                 secretKeyRef:
-                  name: website-sessions-mongo
+                  name: website-api-sessions
                   key: username
             - name: MONGO_INITDB_ROOT_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: website-sessions-mongo
+                  name: website-api-sessions
                   key: password
             - name: MONGODB_USER
               valueFrom:
                 secretKeyRef:
-                  name: website-sessions-mongo
+                  name: website-api-sessions
                   key: username
             - name: MONGODB_PASS
               valueFrom:
                 secretKeyRef:
-                  name: website-sessions-mongo
+                  name: website-api-sessions
                   key: password
             - name: MONGO_INITDB_DATABASE
               valueFrom:
                 secretKeyRef:
-                  name: website-sessions-mongo
+                  name: website-api-sessions
                   key: db
           resources:
             requests:
@@ -69,12 +69,12 @@ spec:
             - configMapRef:
                 name: container-level-config-website-mongo
           volumeMounts:
-            - mountPath: "/etc/secrets/website-sessions-mongo"
-              name: website-sessions-mongo
+            - mountPath: "/etc/secrets/sessions"
+              name: sessions
               readOnly: true
       volumes:
-        - name: website-sessions-mongo
+        - name: sessions
           secret:
-            secretName: website-sessions-mongo
+            secretName: website-mongo-sessions
       imagePullSecrets:
         - name: image-pull-secret

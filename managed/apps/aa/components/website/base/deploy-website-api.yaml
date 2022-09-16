@@ -38,27 +38,27 @@ spec:
             - name: MONGO_COLLECTION
               valueFrom:
                 secretKeyRef:
-                  name: website-sessions-mongo
+                  name: website-mongo-sessions
                   key: db
             - name: MONGO_USER_NAME
               valueFrom:
                 secretKeyRef:
-                  name: website-sessions-mongo
+                  name: website-mongo-sessions
                   key: username
             - name: MONGO_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: website-sessions-mongo
+                  name: website-mongo-sessions
                   key: password
             - name: COOKIE_NAME
               valueFrom:
                 secretKeyRef:
-                  name: website-sessions-mongo
+                  name: website-mongo-sessions
                   key: cookie_name
             - name: COOKIE_SECRET
               valueFrom:
                 secretKeyRef:
-                  name: website-sessions-mongo
+                  name: website-mongo-sessions
                   key: cookie_secret
             - name: SENDGRID_API_KEY
               valueFrom:
@@ -122,15 +122,15 @@ spec:
       volumes:
         - name: google
           secret:
-            secretName: google
+            secretName: website-api-google
         - name: sendgrid-key
           secret:
-            secretName: sendgrid-key
+            secretName: website-api-sendgrid-key
         - name: stripe-key
           secret:
-            secretName: stripe-key
+            secretName: website-api-stripe-key
         - name: mail-key
           secret:
-            secretName: mail-key
+            secretName: website-api-mail-key
       imagePullSecrets:
         - name: image-pull-secret

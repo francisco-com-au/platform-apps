@@ -60,6 +60,6 @@ spec:
       volumes:
         - name: google
           secret:
-            secretName: google
+            secretName: api-api-google
       imagePullSecrets:
         - name: image-pull-secret
