@@ -38,27 +38,27 @@ spec:
             - name: MONGO_COLLECTION
               valueFrom:
                 secretKeyRef:
-                  name: website-api-mongo-sessions
+                  name: website-mongo-sessions
                   key: db
             - name: MONGO_USER_NAME
               valueFrom:
                 secretKeyRef:
-                  name: website-api-mongo-sessions
+                  name: website-mongo-sessions
                   key: username
             - name: MONGO_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: website-api-mongo-sessions
+                  name: website-mongo-sessions
                   key: password
             - name: COOKIE_NAME
               valueFrom:
                 secretKeyRef:
-                  name: website-api-mongo-sessions
+                  name: website-mongo-sessions
                   key: cookie_name
             - name: COOKIE_SECRET
               valueFrom:
                 secretKeyRef:
-                  name: website-api-mongo-sessions
+                  name: website-mongo-sessions
                   key: cookie_secret
             - name: SENDGRID_API_KEY
               valueFrom:
