@@ -37,11 +37,6 @@ spec:
               value: "8985"
             - name: SOLR_PROTOCOL
               value: "http"
-            - name: API_TOKEN
-              valueFrom:
-                secretKeyRef:
-                  name: api-api-token
-                  key: token
           resources:
             requests:
               cpu: "100m"
@@ -62,15 +57,9 @@ spec:
             - mountPath: "/etc/secrets/google"
               name: google
               readOnly: true
-            - mountPath: "/etc/secrets/token"
-              name: token
-              readOnly: true
       volumes:
         - name: google
           secret:
             secretName: api-api-google
-        - name: token
-          secret:
-            secretName: api-api-token
       imagePullSecrets:
         - name: image-pull-secret

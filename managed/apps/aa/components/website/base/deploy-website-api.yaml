@@ -90,6 +90,11 @@ spec:
                 secretKeyRef:
                   name: website-api-mail-key
                   key: MAIL_PASSWORD
+            - name: API_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: website-api-token
+                  key: token
           resources:
             requests:
               cpu: "100m"
@@ -119,6 +124,9 @@ spec:
             - mountPath: "/etc/secrets/mail-key"
               name: mail-key
               readOnly: true
+            - mountPath: "/etc/secrets/token"
+              name: token
+              readOnly: true
       volumes:
         - name: google
           secret:
@@ -132,5 +140,8 @@ spec:
         - name: mail-key
           secret:
             secretName: website-api-mail-key
+        - name: token
+          secret:
+            secretName: website-api-token
       imagePullSecrets:
         - name: image-pull-secret
