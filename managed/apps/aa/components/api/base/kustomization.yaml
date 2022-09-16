@@ -7,6 +7,7 @@ resources:
   - deploy-api-api.yaml
   - svc-api-api-api.yaml
   - secret-api-api-google.yaml
+  - secret-api-api-token.yaml
   - cert-api.yaml
   - ingress-api.yaml
 
