@@ -63,32 +63,32 @@ spec:
             - name: SENDGRID_API_KEY
               valueFrom:
                 secretKeyRef:
-                  name: sendgrid-key
+                  name: website-sendgrid-key
                   key: key
             - name: STRIPE_SECRET_KEY
               valueFrom:
                 secretKeyRef:
-                  name: stripe-key
+                  name: website-stripe-key
                   key: secret_key
             - name: STRIPE_PUBLISHABLE_KEY
               valueFrom:
                 secretKeyRef:
-                  name: stripe-key
+                  name: website-stripe-key
                   key: publishable_key
             - name: STRIPE_WEBHOOK_SECRET
               valueFrom:
                 secretKeyRef:
-                  name: stripe-key
+                  name: website-stripe-key
                   key: webhook_secret
             - name: MAIL_USERNAME
               valueFrom:
                 secretKeyRef:
-                  name: mail-key
+                  name: website-mail-key
                   key: MAIL_USERNAME
             - name: MAIL_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: mail-key
+                  name: website-mail-key
                   key: MAIL_PASSWORD
           resources:
             requests:
