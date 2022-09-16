@@ -6,6 +6,7 @@ resources:
   - container-level-config-api-api.yaml
   - deploy-api-api.yaml
   - svc-api-api-api.yaml
+  - secret-google.yaml
   - cert-api.yaml
   - ingress-api.yaml
 

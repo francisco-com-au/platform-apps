@@ -29,6 +29,10 @@ spec:
           env: 
             - name: PORT
               value: "8080"
+            - name: FIRESTORE_PROJECT_ID
+              value: "tf-aa-website-dev-338608"
+            - name: GOOGLE_APPLICATION_CREDENTIALS
+              value: "/etc/secrets/google/key.json"
             - name: SOLR_PORT
               value: "8985"
             - name: SOLR_PROTOCOL
@@ -49,7 +53,13 @@ spec:
                 name: component-level-config-api
             - configMapRef:
                 name: container-level-config-api-api
-          
-      
+          volumeMounts:
+            - mountPath: "/etc/secrets/google"
+              name: google
+              readOnly: true
+      volumes:
+        - name: google
+          secret:
+            secretName: google
       imagePullSecrets:
         - name: image-pull-secret
