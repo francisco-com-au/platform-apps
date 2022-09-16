@@ -30,27 +30,27 @@ spec:
             - name: MONGO_INITDB_ROOT_USERNAME
               valueFrom:
                 secretKeyRef:
-                  name: website-mongo-sessions
+                  name: website-api-mongo-sessions
                   key: username
             - name: MONGO_INITDB_ROOT_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: website-mongo-sessions
+                  name: website-api-mongo-sessions
                   key: password
             - name: MONGODB_USER
               valueFrom:
                 secretKeyRef:
-                  name: website-mongo-sessions
+                  name: website-api-mongo-sessions
                   key: username
             - name: MONGODB_PASS
               valueFrom:
                 secretKeyRef:
-                  name: website-mongo-sessions
+                  name: website-api-mongo-sessions
                   key: password
             - name: MONGO_INITDB_DATABASE
               valueFrom:
                 secretKeyRef:
-                  name: website-mongo-sessions
+                  name: website-api-mongo-sessions
                   key: db
           resources:
             requests:
