@@ -26,7 +26,11 @@ spec:
           imagePullPolicy: Always
           ports: 
             - containerPort: 8080
-          
+          env: 
+            - name: PORT
+              value: "8080"
+            - name: GOOGLE_APPLICATION_CREDENTIALS
+              value: "/etc/secrets/google/key.json"
           resources:
             requests:
               cpu: "100m"
@@ -43,7 +47,13 @@ spec:
                 name: component-level-config-website
             - configMapRef:
                 name: container-level-config-website-api
-          
-      
+          volumeMounts:
+            - mountPath: "/etc/secrets/google"
+              name: google
+              readOnly: true
+      volumes:
+        - name: google
+          secret:
+            secretName: website-api-google
       imagePullSecrets:
         - name: image-pull-secret
