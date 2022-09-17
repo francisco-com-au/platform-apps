@@ -3,7 +3,7 @@ kind: Ingress
 apiVersion: networking.k8s.io/v1
 metadata:
   name: website
-  namespace: e2e
+  namespace: eg
 spec:
   tls:
   - hosts:

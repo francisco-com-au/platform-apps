@@ -1,0 +1,10 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-level-config
+  namespace: eg
+data:
+  APP_ID: eg
+  APP_NAME: Easy Gifts
+  APP_DOMAIN: gifts.american-broomstick.com

@@ -3,7 +3,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: container-level-config-website-static
-  namespace: e2e
+  namespace: eg
 data:
   CONTAINER_ID: static
   CONTAINER_NAME: static

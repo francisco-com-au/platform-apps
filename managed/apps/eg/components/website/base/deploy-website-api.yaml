@@ -2,30 +2,30 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: website-static
-  namespace: e2e
+  name: website-api
+  namespace: eg
   annotations:
     reloader.stakater.com/auto: "true"
 spec:
   selector:
     matchLabels:
-      app: e2e
+      app: eg
       component: website
-      container: static
+      container: api
   replicas: 1
   template:
     metadata:
       labels:
-        app: e2e
+        app: eg
         component: website
-        container: static
+        container: api
     spec:
       containers:
-        - name: static
-          image: gcr.io/tf-ops-cicd-97aadd/e2e/website/main/static:latest
+        - name: api
+          image: gcr.io/tf-ops-cicd-97aadd/eg/website/main/api:latest
           imagePullPolicy: Always
           ports: 
-            - containerPort: 80
+            - containerPort: 8080
           
           resources:
             requests:
@@ -42,7 +42,7 @@ spec:
             - configMapRef:
                 name: component-level-config-website
             - configMapRef:
-                name: container-level-config-website-static
+                name: container-level-config-website-api
           
       
       imagePullSecrets:

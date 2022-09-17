@@ -3,10 +3,10 @@ kind: "Service"
 apiVersion: "v1"
 metadata:
   name: "website-static-nginx"
-  namespace: e2e
+  namespace: eg
 spec:
   selector:
-    app: e2e
+    app: eg
     component: website
     container: static
   ports:
