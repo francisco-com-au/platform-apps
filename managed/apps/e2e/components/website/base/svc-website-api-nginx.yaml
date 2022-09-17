@@ -1,0 +1,15 @@
+---
+kind: "Service"
+apiVersion: "v1"
+metadata:
+  name: "website-api-nginx"
+  namespace: e2e
+spec:
+  selector:
+    app: e2e
+    component: website
+    container: api
+  ports:
+    - name: "nginx"
+      protocol: "TCP"
+      port: 8080

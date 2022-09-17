@@ -1,0 +1,10 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: component-level-config-website
+  namespace: e2e
+data:
+  COMPONENT_ID: website
+  COMPONENT_NAME: website
+  COMPONENT_DOMAIN_NAME: gifts.american-broomstick.com

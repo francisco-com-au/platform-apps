@@ -1,0 +1,32 @@
+---
+kind: Ingress
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: website
+  namespace: e2e
+  # annotations:
+  #  nginx.ingress.kubernetes.io/backend-protocol: https # ingress-nginx
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+      - gifts.american-broomstick.com
+      secretName: website-tls
+  rules:
+    - host: gifts.american-broomstick.com
+      http:
+        paths: 
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: website-static-nginx
+                port:
+                  number: 80
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: website-api-nginx
+                port:
+                  number: 8080
