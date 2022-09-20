@@ -31,6 +31,11 @@ spec:
               value: "8080"
             - name: GOOGLE_APPLICATION_CREDENTIALS
               value: "/etc/secrets/google/key.json"
+            - name: TOKEN_API
+              valueFrom:
+                secretKeyRef:
+                  name: website-api-token
+                  key: token
           resources:
             requests:
               cpu: "100m"
@@ -51,9 +56,15 @@ spec:
             - mountPath: "/etc/secrets/google"
               name: google
               readOnly: true
+            - mountPath: "/etc/secrets/token"
+              name: token
+              readOnly: true
       volumes:
         - name: google
           secret:
             secretName: website-api-google
+        - name: token
+          secret:
+            secretName: website-api-token
       imagePullSecrets:
         - name: image-pull-secret
