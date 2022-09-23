@@ -1,0 +1,13 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: website
+  namespace: stocks
+spec:
+  dnsNames:
+    - stocks.american-broomstick.com
+  secretName: website-tls
+  issuerRef:
+    name: letsencrypt-cluster-issuer
+    kind: ClusterIssuer
