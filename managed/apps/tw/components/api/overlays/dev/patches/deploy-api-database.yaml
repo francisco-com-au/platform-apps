@@ -9,4 +9,4 @@ spec:
     spec:
       containers:
         - name: database
-          image: gcr.io/tf-ops-cicd-97aadd/tw/api/dev/database:latest
+          image: mongo:3.6.23
