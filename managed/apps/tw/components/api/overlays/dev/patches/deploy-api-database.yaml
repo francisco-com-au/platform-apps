@@ -1,0 +1,12 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-database
+  namespace: tw
+spec:
+  template:
+    spec:
+      containers:
+        - name: database
+          image: gcr.io/tf-ops-cicd-97aadd/tw/api/dev/database:latest

@@ -1,0 +1,10 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-level-config
+  namespace: tw
+data:
+  APP_ID: tw
+  APP_NAME: Twister
+  APP_DOMAIN: twister.american-broomstick.com

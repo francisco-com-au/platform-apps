@@ -1,0 +1,80 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-database
+  namespace: tw
+  annotations:
+    reloader.stakater.com/auto: "true"
+spec:
+  selector:
+    matchLabels:
+      app: tw
+      component: api
+      container: database
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: tw
+        component: api
+        container: database
+    spec:
+      containers:
+        - name: database
+          image: gcr.io/tf-ops-cicd-97aadd/tw/api/main/database:latest
+          imagePullPolicy: Always
+          ports: 
+            - containerPort: 27017
+          env: 
+            - name: MONGO_INITDB_ROOT_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: api-database-mongo
+                  key: username
+            - name: MONGO_INITDB_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: api-database-mongo
+                  key: password
+            - name: MONGODB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: api-database-mongo
+                  key: username
+            - name: MONGODB_PASS
+              valueFrom:
+                secretKeyRef:
+                  name: api-database-mongo
+                  key: password
+            - name: MONGO_INITDB_DATABASE
+              valueFrom:
+                secretKeyRef:
+                  name: api-database-mongo
+                  key: db
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "256Mi"
+            limits:
+              cpu: "250m"
+              memory: "256Mi"
+          envFrom:
+            - configMapRef:
+                name: app-level-config
+            - configMapRef:
+                name: env-level-config
+            - configMapRef:
+                name: component-level-config-api
+            - configMapRef:
+                name: container-level-config-api-database
+          volumeMounts:
+            - mountPath: "/etc/secrets/mongo"
+              name: mongo
+              readOnly: true
+      volumes:
+        - name: mongo
+          secret:
+            secretName: api-database-mongo
+      imagePullSecrets:
+        - name: image-pull-secret

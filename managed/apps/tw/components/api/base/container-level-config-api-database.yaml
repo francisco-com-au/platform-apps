@@ -1,0 +1,9 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: container-level-config-api-database
+  namespace: tw
+data:
+  CONTAINER_ID: database
+  CONTAINER_NAME: database

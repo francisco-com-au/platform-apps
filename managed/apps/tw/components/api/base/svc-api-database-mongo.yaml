@@ -1,0 +1,15 @@
+---
+kind: "Service"
+apiVersion: "v1"
+metadata:
+  name: "api-database-mongo"
+  namespace: tw
+spec:
+  selector:
+    app: tw
+    component: api
+    container: database
+  ports:
+    - name: "mongo"
+      protocol: "TCP"
+      port: 27017
