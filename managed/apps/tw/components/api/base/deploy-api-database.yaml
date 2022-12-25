@@ -26,32 +26,7 @@ spec:
           imagePullPolicy: Always
           ports: 
             - containerPort: 27017
-          env: 
-            - name: MONGO_INITDB_ROOT_USERNAME
-              valueFrom:
-                secretKeyRef:
-                  name: api-database-mongo
-                  key: username
-            - name: MONGO_INITDB_ROOT_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: api-database-mongo
-                  key: password
-            - name: MONGODB_USER
-              valueFrom:
-                secretKeyRef:
-                  name: api-database-mongo
-                  key: username
-            - name: MONGODB_PASS
-              valueFrom:
-                secretKeyRef:
-                  name: api-database-mongo
-                  key: password
-            - name: MONGO_INITDB_DATABASE
-              valueFrom:
-                secretKeyRef:
-                  name: api-database-mongo
-                  key: db
+          
           resources:
             requests:
               cpu: "100m"
