@@ -12,7 +12,7 @@ spec:
       app: tw
       component: api
       container: api
-  replicas: 1
+  replicas: 2
   template:
     metadata:
       labels:
