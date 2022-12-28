@@ -1,0 +1,25 @@
+---
+kind: Ingress
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: website
+  namespace: tw
+  # annotations:
+  #  nginx.ingress.kubernetes.io/backend-protocol: https # ingress-nginx
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+      - twister.american-broomstick.com
+      secretName: website-tls
+  rules:
+    - host: twister.american-broomstick.com
+      http:
+        paths: 
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: website-static-webserver
+                port:
+                  number: 80

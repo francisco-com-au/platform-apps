@@ -1,0 +1,22 @@
+---
+kind: Ingress
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: website
+  namespace: tw
+spec:
+  tls:
+  - hosts:
+    - dev.twister.american-broomstick.com
+    secretName: website-tls
+  rules:
+  - host: dev.twister.american-broomstick.com
+    http:
+      paths: 
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: website-static-webserver
+              port:
+                number: 80

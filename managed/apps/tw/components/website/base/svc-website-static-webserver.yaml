@@ -1,0 +1,15 @@
+---
+kind: "Service"
+apiVersion: "v1"
+metadata:
+  name: "website-static-webserver"
+  namespace: tw
+spec:
+  selector:
+    app: tw
+    component: website
+    container: static
+  ports:
+    - name: "webserver"
+      protocol: "TCP"
+      port: 80
