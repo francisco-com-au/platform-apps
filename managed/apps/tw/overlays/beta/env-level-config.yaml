@@ -1,0 +1,10 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: env-level-config
+  namespace: tw
+data:
+  ENV: beta
+  ENV_TYPE: dev
+  BRANCH: beta
