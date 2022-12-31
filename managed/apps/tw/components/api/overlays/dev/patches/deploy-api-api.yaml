@@ -9,4 +9,4 @@ spec:
     spec:
       containers:
         - name: api
-          image: gcr.io/tf-ops-cicd-97aadd/tw/api/dev/api:b3548de
+          image: gcr.io/tf-ops-cicd-97aadd/tw/api/dev/api:1aa0c11
