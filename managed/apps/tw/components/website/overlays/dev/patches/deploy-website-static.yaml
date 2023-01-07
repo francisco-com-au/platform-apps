@@ -9,4 +9,4 @@ spec:
     spec:
       containers:
         - name: static
-          image: gcr.io/tf-ops-cicd-97aadd/tw/website/dev/static:587c0cf
+          image: gcr.io/tf-ops-cicd-97aadd/tw/website/dev/static:8b5c0f2
