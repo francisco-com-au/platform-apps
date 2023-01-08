@@ -1,0 +1,10 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-level-config
+  namespace: bank
+data:
+  APP_ID: bank
+  APP_NAME: Bank
+  APP_DOMAIN: bank.francisco.au

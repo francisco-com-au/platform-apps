@@ -1,0 +1,22 @@
+---
+kind: Ingress
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: website
+  namespace: bank
+spec:
+  tls:
+  - hosts:
+    - dev.bank.francisco.au
+    secretName: website-tls
+  rules:
+  - host: dev.bank.francisco.au
+    http:
+      paths: 
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: website-static-webserver
+              port:
+                number: 80
