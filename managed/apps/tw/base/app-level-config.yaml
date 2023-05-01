@@ -6,5 +6,5 @@ metadata:
   namespace: tw
 data:
   APP_ID: tw
-  APP_NAME: Twister
-  APP_DOMAIN: twister.american-broomstick.com
+  APP_NAME: AI
+  APP_DOMAIN: ai.francisco.com.au

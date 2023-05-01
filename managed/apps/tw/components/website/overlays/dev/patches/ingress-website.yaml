@@ -7,10 +7,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - dev.twister.american-broomstick.com
+    - dev.ai.francisco.com.au
     secretName: website-tls
   rules:
-  - host: dev.twister.american-broomstick.com
+  - host: dev.ai.francisco.com.au
     http:
       paths: 
         - path: /

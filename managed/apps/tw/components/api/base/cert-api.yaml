@@ -6,7 +6,7 @@ metadata:
   namespace: tw
 spec:
   dnsNames:
-    - api.twister.american-broomstick.com
+    - api.ai.francisco.com.au
   secretName: api-tls
   issuerRef:
     name: letsencrypt-cluster-issuer
