@@ -2,16 +2,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: tw
+  name: ai
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  description: Mock replica of Twitter.
+  description: Playground for AI stuff.
   sourceRepos:
     - '*'
   destinations:
-    - namespace: tw
+    - namespace: ai
       server: https://kubernetes.default.svc
     - namespace: '*'
       server: https://kubernetes.default.svc

@@ -6,6 +6,10 @@ resources:
   - container-level-config-website-static.yaml
   - deploy-website-static.yaml
   - svc-website-static-webserver.yaml
+  - container-level-config-website-api.yaml
+  - deploy-website-api.yaml
+  - svc-website-api-api.yaml
+  - secret-website-api-openai.yaml
   - cert-website.yaml
   - ingress-website.yaml
 

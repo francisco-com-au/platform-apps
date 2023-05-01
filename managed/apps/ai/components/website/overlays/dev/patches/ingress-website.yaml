@@ -3,14 +3,14 @@ kind: Ingress
 apiVersion: networking.k8s.io/v1
 metadata:
   name: website
-  namespace: tw
+  namespace: ai
 spec:
   tls:
   - hosts:
-    - dev.twister.american-broomstick.com
+    - dev.ai.francisco.com.au
     secretName: website-tls
   rules:
-  - host: dev.twister.american-broomstick.com
+  - host: dev.ai.francisco.com.au
     http:
       paths: 
         - path: /
@@ -20,3 +20,10 @@ spec:
               name: website-static-webserver
               port:
                 number: 80
+        - path: /api
+          pathType: Prefix
+          backend:
+            service:
+              name: website-api-api
+              port:
+                number: 8080

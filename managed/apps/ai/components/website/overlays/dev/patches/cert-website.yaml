@@ -3,7 +3,7 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: website
-  namespace: tw
+  namespace: ai
 spec:
   dnsNames:
-    - dev.twister.american-broomstick.com
+    - dev.ai.francisco.com.au

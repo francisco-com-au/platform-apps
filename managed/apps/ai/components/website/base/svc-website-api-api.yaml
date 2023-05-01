@@ -3,10 +3,10 @@ kind: "Service"
 apiVersion: "v1"
 metadata:
   name: "website-api-api"
-  namespace: tw
+  namespace: ai
 spec:
   selector:
-    app: tw
+    app: ai
     component: website
     container: api
   ports:

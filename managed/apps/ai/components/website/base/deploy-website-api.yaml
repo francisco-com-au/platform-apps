@@ -3,26 +3,26 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: website-api
-  namespace: tw
+  namespace: ai
   annotations:
     reloader.stakater.com/auto: "true"
 spec:
   selector:
     matchLabels:
-      app: tw
+      app: ai
       component: website
       container: api
   replicas: 1
   template:
     metadata:
       labels:
-        app: tw
+        app: ai
         component: website
         container: api
     spec:
       containers:
         - name: api
-          image: gcr.io/tf-ops-cicd-97aadd/tw/website/main/api:latest
+          image: gcr.io/tf-ops-cicd-97aadd/ai/website/main/api:latest
           imagePullPolicy: Always
           ports: 
             - containerPort: 8080

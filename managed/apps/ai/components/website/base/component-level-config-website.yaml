@@ -3,8 +3,8 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: component-level-config-website
-  namespace: tw
+  namespace: ai
 data:
   COMPONENT_ID: website
   COMPONENT_NAME: website
-  COMPONENT_DOMAIN_NAME: twister.american-broomstick.com
+  COMPONENT_DOMAIN_NAME: ai.francisco.com.au

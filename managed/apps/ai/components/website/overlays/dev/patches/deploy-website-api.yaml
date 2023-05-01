@@ -3,10 +3,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: website-api
-  namespace: tw
+  namespace: ai
 spec:
   template:
     spec:
       containers:
         - name: api
-          image: gcr.io/tf-ops-cicd-97aadd/tw/website/dev/api:latest
+          image: gcr.io/tf-ops-cicd-97aadd/ai/website/dev/api:latest
