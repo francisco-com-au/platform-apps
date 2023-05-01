@@ -10,10 +10,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-      - api.ai.francisco.com.au
+      - api.twister.american-broomstick.com
       secretName: api-tls
   rules:
-    - host: api.ai.francisco.com.au
+    - host: api.twister.american-broomstick.com
       http:
         paths: 
           - path: /

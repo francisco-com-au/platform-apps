@@ -1,0 +1,15 @@
+---
+kind: "Service"
+apiVersion: "v1"
+metadata:
+  name: "website-api-api"
+  namespace: tw
+spec:
+  selector:
+    app: tw
+    component: website
+    container: api
+  ports:
+    - name: "api"
+      protocol: "TCP"
+      port: 8080

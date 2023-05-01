@@ -6,7 +6,10 @@ resources:
   - container-level-config-api-api.yaml
   - deploy-api-api.yaml
   - svc-api-api-api.yaml
-  - secret-api-api-openai.yaml
+  - container-level-config-api-database.yaml
+  - deploy-api-database.yaml
+  - svc-api-database-mongo.yaml
+  - secret-api-database-mongo.yaml
   - cert-api.yaml
   - ingress-api.yaml
 

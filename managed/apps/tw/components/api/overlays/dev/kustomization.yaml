@@ -7,4 +7,5 @@ patchesStrategicMerge:
   - patches/cert-api.yaml
   - patches/ingress-api.yaml
   - patches/deploy-api-api.yaml
+  - patches/deploy-api-database.yaml
 

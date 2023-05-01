@@ -6,4 +6,4 @@ metadata:
   namespace: tw
 spec:
   dnsNames:
-    - api.dev.ai.francisco.com.au
+    - api.dev.twister.american-broomstick.com
