@@ -6,7 +6,7 @@ metadata:
   namespace: ai
 spec:
   dnsNames:
-    - ai.francisco.com.au
+    - ai.home.galarza.business
   secretName: website-tls
   issuerRef:
     name: letsencrypt-cluster-issuer

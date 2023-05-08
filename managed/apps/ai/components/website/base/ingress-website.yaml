@@ -10,10 +10,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-      - ai.francisco.com.au
+      - ai.home.galarza.business
       secretName: website-tls
   rules:
-    - host: ai.francisco.com.au
+    - host: ai.home.galarza.business
       http:
         paths: 
           - path: /

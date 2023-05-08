@@ -7,10 +7,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - dev.ai.francisco.com.au
+    - dev.ai.home.galarza.business
     secretName: website-tls
   rules:
-  - host: dev.ai.francisco.com.au
+  - host: dev.ai.home.galarza.business
     http:
       paths: 
         - path: /
