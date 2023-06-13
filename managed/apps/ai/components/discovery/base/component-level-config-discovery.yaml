@@ -1,0 +1,10 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: component-level-config-discovery
+  namespace: ai
+data:
+  COMPONENT_ID: discovery
+  COMPONENT_NAME: discovery
+  COMPONENT_DOMAIN_NAME: ai.home.galarza.business
