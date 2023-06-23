@@ -1,0 +1,62 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: discovery-api
+  namespace: ai
+  annotations:
+    reloader.stakater.com/auto: "true"
+spec:
+  selector:
+    matchLabels:
+      app: ai
+      component: discovery
+      container: api
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ai
+        component: discovery
+        container: api
+    spec:
+      containers:
+        - name: api
+          image: gcr.io/tf-ops-cicd-97aadd/ai/discovery/main/api:latest
+          imagePullPolicy: Always
+          ports: 
+            - containerPort: 8080
+          env: 
+            - name: PORT
+              value: "8080"
+            - name: OPENAI_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: discovery-api-openai
+                  key: token
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "256Mi"
+            limits:
+              cpu: "250m"
+              memory: "256Mi"
+          envFrom:
+            - configMapRef:
+                name: app-level-config
+            - configMapRef:
+                name: env-level-config
+            - configMapRef:
+                name: component-level-config-discovery
+            - configMapRef:
+                name: container-level-config-discovery-api
+          volumeMounts:
+            - mountPath: "/etc/secrets/openai"
+              name: openai
+              readOnly: true
+      volumes:
+        - name: openai
+          secret:
+            secretName: discovery-api-openai
+      imagePullSecrets:
+        - name: image-pull-secret

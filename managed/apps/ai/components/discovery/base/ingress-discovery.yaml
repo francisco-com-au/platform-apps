@@ -2,7 +2,7 @@
 kind: Ingress
 apiVersion: networking.k8s.io/v1
 metadata:
-  name: website
+  name: discovery
   namespace: ai
   # annotations:
   #  nginx.ingress.kubernetes.io/backend-protocol: https # ingress-nginx
@@ -10,23 +10,23 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-      - ai.galarza.business
-      secretName: website-tls
+      - huberchat.ai.galarza.business
+      secretName: discovery-tls
   rules:
-    - host: ai.galarza.business
+    - host: huberchat.ai.galarza.business
       http:
         paths: 
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: website-static-webserver
+                name: discovery-static-webserver
                 port:
                   number: 80
           - path: /api
             pathType: Prefix
             backend:
               service:
-                name: website-api-api
+                name: discovery-api-api
                 port:
                   number: 8080

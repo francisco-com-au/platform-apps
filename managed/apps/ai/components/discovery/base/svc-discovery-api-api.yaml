@@ -1,0 +1,15 @@
+---
+kind: "Service"
+apiVersion: "v1"
+metadata:
+  name: "discovery-api-api"
+  namespace: ai
+spec:
+  selector:
+    app: ai
+    component: discovery
+    container: api
+  ports:
+    - name: "api"
+      protocol: "TCP"
+      port: 8080

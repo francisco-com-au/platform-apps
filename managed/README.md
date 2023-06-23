@@ -49,4 +49,8 @@
       │    └── api: 
       │         └── api: 8080 /api
       └── discovery
+           ├── static: 
+           │    └── webserver: 80 /
+           └── api: 
+                └── api: 8080 /api
 ```

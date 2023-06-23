@@ -1,0 +1,15 @@
+---
+kind: "Service"
+apiVersion: "v1"
+metadata:
+  name: "discovery-static-webserver"
+  namespace: ai
+spec:
+  selector:
+    app: ai
+    component: discovery
+    container: static
+  ports:
+    - name: "webserver"
+      protocol: "TCP"
+      port: 80

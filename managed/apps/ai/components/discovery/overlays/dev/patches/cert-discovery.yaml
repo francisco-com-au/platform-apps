@@ -2,8 +2,8 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: website
+  name: discovery
   namespace: ai
 spec:
   dnsNames:
-    - dev.ai.galarza.business
+    - huberchat.dev.ai.galarza.business

@@ -2,12 +2,12 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: website
+  name: discovery
   namespace: ai
 spec:
   dnsNames:
-    - ai.galarza.business
-  secretName: website-tls
+    - huberchat.ai.galarza.business
+  secretName: discovery-tls
   issuerRef:
     name: letsencrypt-cluster-issuer
     kind: ClusterIssuer
