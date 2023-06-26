@@ -10,10 +10,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-      - api.addressaustralia.com.au
+      - api.addressaustralia.american-broomstick.com
       secretName: api-tls
   rules:
-    - host: api.addressaustralia.com.au
+    - host: api.addressaustralia.american-broomstick.com
       http:
         paths: 
           - path: /

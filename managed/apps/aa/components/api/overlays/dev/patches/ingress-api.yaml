@@ -7,10 +7,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - api.dev.addressaustralia.com.au
+    - api.dev.addressaustralia.american-broomstick.com
     secretName: api-tls
   rules:
-  - host: api.dev.addressaustralia.com.au
+  - host: api.dev.addressaustralia.american-broomstick.com
     http:
       paths: 
         - path: /

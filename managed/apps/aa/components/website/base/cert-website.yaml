@@ -6,7 +6,7 @@ metadata:
   namespace: aa
 spec:
   dnsNames:
-    - addressaustralia.com.au
+    - addressaustralia.american-broomstick.com
   secretName: website-tls
   issuerRef:
     name: letsencrypt-cluster-issuer

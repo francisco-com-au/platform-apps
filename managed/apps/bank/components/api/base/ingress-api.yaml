@@ -10,10 +10,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-      - api.bank.francisco.au
+      - api.bank.american-broomstick.com
       secretName: api-tls
   rules:
-    - host: api.bank.francisco.au
+    - host: api.bank.american-broomstick.com
       http:
         paths: 
           - path: /

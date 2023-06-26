@@ -6,4 +6,4 @@ metadata:
   namespace: bank
 spec:
   dnsNames:
-    - api.dev.bank.francisco.au
+    - api.dev.bank.american-broomstick.com

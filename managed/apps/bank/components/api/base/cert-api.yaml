@@ -6,7 +6,7 @@ metadata:
   namespace: bank
 spec:
   dnsNames:
-    - api.bank.francisco.au
+    - api.bank.american-broomstick.com
   secretName: api-tls
   issuerRef:
     name: letsencrypt-cluster-issuer

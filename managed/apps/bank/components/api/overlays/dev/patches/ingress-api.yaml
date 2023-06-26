@@ -7,10 +7,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - api.dev.bank.francisco.au
+    - api.dev.bank.american-broomstick.com
     secretName: api-tls
   rules:
-  - host: api.dev.bank.francisco.au
+  - host: api.dev.bank.american-broomstick.com
     http:
       paths: 
         - path: /
