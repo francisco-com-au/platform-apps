@@ -13,17 +13,3 @@ spec:
   - host: dev.stocks.american-broomstick.com
     http:
       paths: 
-        - path: /
-          pathType: Prefix
-          backend:
-            service:
-              name: website-static-nginx
-              port:
-                number: 80
-        - path: /api
-          pathType: Prefix
-          backend:
-            service:
-              name: website-api-nginx
-              port:
-                number: 8080

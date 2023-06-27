@@ -1,9 +1,0 @@
----
-apiVersion: cert-manager.io/v1
-kind: Certificate
-metadata:
-  name: website
-  namespace: bank
-spec:
-  dnsNames:
-    - dev.bank.american-broomstick.com

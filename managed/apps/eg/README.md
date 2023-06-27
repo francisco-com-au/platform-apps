@@ -7,8 +7,4 @@ gifts.american-broomstick.com
 ```
  Easy Gifts
   └── website
-       ├── static: 
-       │    └── nginx: 80 /
-       └── api: 
-            └── nginx: 8080 /api
 ```

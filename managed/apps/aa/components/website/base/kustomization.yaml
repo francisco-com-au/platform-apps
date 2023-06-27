@@ -3,23 +3,6 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - component-level-config-website.yaml
-  - container-level-config-website-mongo.yaml
-  - deploy-website-mongo.yaml
-  - svc-website-mongo-mongo.yaml
-  - secret-website-mongo-sessions.yaml
-  - container-level-config-website-static.yaml
-  - deploy-website-static.yaml
-  - svc-website-static-webserver.yaml
-  - container-level-config-website-api.yaml
-  - deploy-website-api.yaml
-  - svc-website-api-api.yaml
-  - secret-website-api-google.yaml
-  - secret-website-api-sendgrid-key.yaml
-  - secret-website-api-stripe-key.yaml
-  - secret-website-api-mail-key.yaml
-  - secret-website-api-token.yaml
-  - cert-website.yaml
-  - ingress-website.yaml
 
 
 
