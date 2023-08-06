@@ -1,0 +1,12 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mock-ui-static
+  namespace: lm
+spec:
+  template:
+    spec:
+      containers:
+        - name: static
+          image: gcr.io/tf-ops-cicd-97aadd/lm/mock-ui/dev/static:latest

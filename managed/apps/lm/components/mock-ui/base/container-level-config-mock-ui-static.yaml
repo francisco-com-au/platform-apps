@@ -1,0 +1,9 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: container-level-config-mock-ui-static
+  namespace: lm
+data:
+  CONTAINER_ID: static
+  CONTAINER_NAME: static

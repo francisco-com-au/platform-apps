@@ -1,0 +1,22 @@
+---
+kind: Ingress
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: mock-ui
+  namespace: lm
+spec:
+  tls:
+  - hosts:
+    - dev.leanmote.american-broomstick.com
+    secretName: mock-ui-tls
+  rules:
+  - host: dev.leanmote.american-broomstick.com
+    http:
+      paths: 
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: mock-ui-static-webserver
+              port:
+                number: 80

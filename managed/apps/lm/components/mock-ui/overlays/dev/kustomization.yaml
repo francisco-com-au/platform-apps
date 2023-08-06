@@ -1,0 +1,10 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../base
+patchesStrategicMerge:
+  - patches/cert-mock-ui.yaml
+  - patches/ingress-mock-ui.yaml
+  - patches/deploy-mock-ui-static.yaml
+

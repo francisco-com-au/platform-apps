@@ -1,0 +1,10 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: component-level-config-mock-ui
+  namespace: lm
+data:
+  COMPONENT_ID: mock-ui
+  COMPONENT_NAME: mock-ui
+  COMPONENT_DOMAIN_NAME: leanmote.american-broomstick.com

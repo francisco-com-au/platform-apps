@@ -1,0 +1,10 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-level-config
+  namespace: lm
+data:
+  APP_ID: lm
+  APP_NAME: Leanmote AI
+  APP_DOMAIN: leanmote.american-broomstick.com

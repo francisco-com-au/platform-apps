@@ -1,0 +1,49 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mock-ui-static
+  namespace: lm
+  annotations:
+    reloader.stakater.com/auto: "true"
+spec:
+  selector:
+    matchLabels:
+      app: lm
+      component: mock-ui
+      container: static
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: lm
+        component: mock-ui
+        container: static
+    spec:
+      containers:
+        - name: static
+          image: gcr.io/tf-ops-cicd-97aadd/lm/mock-ui/main/static:latest
+          imagePullPolicy: Always
+          ports: 
+            - containerPort: 80
+          
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "256Mi"
+            limits:
+              cpu: "250m"
+              memory: "256Mi"
+          envFrom:
+            - configMapRef:
+                name: app-level-config
+            - configMapRef:
+                name: env-level-config
+            - configMapRef:
+                name: component-level-config-mock-ui
+            - configMapRef:
+                name: container-level-config-mock-ui-static
+          
+      
+      imagePullSecrets:
+        - name: image-pull-secret

@@ -1,0 +1,15 @@
+---
+kind: "Service"
+apiVersion: "v1"
+metadata:
+  name: "mock-ui-static-webserver"
+  namespace: lm
+spec:
+  selector:
+    app: lm
+    component: mock-ui
+    container: static
+  ports:
+    - name: "webserver"
+      protocol: "TCP"
+      port: 80
